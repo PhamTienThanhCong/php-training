@@ -16,9 +16,10 @@
 
 .container{
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
-    padding: 0 20px;
+    min-height: 100vh;
+    position: relative;
 }
 
 .footer{
@@ -33,6 +34,7 @@
 
 .main{
     display: flex;
+    /* min-height: 100vh; */
     flex-wrap: wrap;
     justify-content: space-between;
 }
