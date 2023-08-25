@@ -12,6 +12,12 @@
     <!-- right content -->
     <div class="list-right">
         <h2 style="text-align: center;"><?= $page ?></h2>
-        <?php include_once("./pages/$content"); ?>
+        <?php 
+            if ($content != null) {
+                include_once("./pages/$content");
+            } else {
+                echo "<h3 style='text-align: center;'>Không có nội dung</h3>";
+            }
+        ?>
     </div>
 </div>
