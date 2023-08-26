@@ -9,4 +9,5 @@
         "Bài 4" => "baitap04.php",
         "Bài 7" => "baitap07.php",
         "Bài 8" => "baitap08.php",
+        "Bài 10" => "baitap10/index.php",
     ];    
