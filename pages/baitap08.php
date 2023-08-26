@@ -77,7 +77,7 @@
         <div>
             <h2 style="text-align: center;">Welcome <?= $USERNAME ?></h2>
             <br>
-            <a href="./index.php?page=baitap08?error=1">Đăng xuất</a>
+            <a href="./index.php?page=Bài%208">Đăng xuất</a>
         </div>
     <?php } ?>
 </div>
