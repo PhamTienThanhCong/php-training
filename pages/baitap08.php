@@ -58,23 +58,26 @@
 
 <div class="form">
     <?php if(!$USERNAME) { ?>
-    <form method="POST">
-        <p class="text-error"><?= $ERROR ?></p>
-        <label for="username">
-            UserName
-        </label>
-        <input type="text" name="username" id="username" placeholder="Enter your username">
-        <br>
-        <label for="password">
-            Password
-        </label>
-        <input type="password" name="password" id="password" placeholder="Enter your password">
-        <br>
-        <!-- button submit -->
-        <button type="submit">Submit</button>
-    </form>
+        <form method="POST">
+            <p class="text-error"><?= $ERROR ?></p>
+            <label for="username">
+                UserName
+            </label>
+            <input type="text" name="username" id="username" placeholder="Enter your username">
+            <br>
+            <label for="password">
+                Password
+            </label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+            <br>
+            <!-- button submit -->
+            <button type="submit">Submit</button>
+        </form>
     <?php } else { ?>
-        <h2 style="text-align: center;">Welcome <?= $USERNAME ?></h2>
-        <a href="./index.php?page=baitap08?error=1"></a>
+        <div>
+            <h2 style="text-align: center;">Welcome <?= $USERNAME ?></h2>
+            <br>
+            <a href="./index.php?page=baitap08?error=1">Đăng xuất</a>
+        </div>
     <?php } ?>
 </div>
