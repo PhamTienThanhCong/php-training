@@ -1,5 +1,6 @@
 <?php 
-    $NAME_AUTHOR = "Phạm Tiến Thành Công";
+    $NAME_AUTHOR = "";
+    $IS_LOGIN = false;
     $NAME_HOME_WORK = "LIST HOME WORK";
     // List homework
     $HOME_WORK = [
