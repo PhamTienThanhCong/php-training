@@ -1,23 +1,41 @@
-<?php 
-    $last_login = "";
-    if(isset($_COOKIE["last_login"])) {
-        $last_login = $_COOKIE["last_login"];
+<?php
+    $view_size_count = 0;
+    // Kiểm tra file tồn tại hay không
+    if (file_exists("./logs/viewCount.txt")) {
+        $file = fopen("./logs/viewCount.txt", "r");
+        if ($file) {
+            while (($line = fgets($file)) !== false) {
+                $view_size_count = $line;
+            }
+            fclose($file);
+        }
     }
-    // Lấy time của server
-    date_default_timezone_set("Asia/Ho_Chi_Minh");
-    // save cookie last_login current time 10 years
-    setcookie("last_login", date("d/m/Y H:i:s"), time() + 10 * 365 * 24 * 60 * 60);
+    
+    $view_size_count++;
+    // write content of file viewCount.txt
+    $file = fopen("./logs/viewCount.txt", "w");
+    if ($file) {
+        fwrite($file, $view_size_count);
+        fclose($file);
+    }
+    
 ?>
+
 <div class="footer">
     <?= $NAME_AUTHOR ?>
     <br>
     <span style="font-size: small;">
-        <?php 
-            if ($last_login != "") {
-                echo "Đăng nhập lần cuối lúc: " . $last_login;
-            } else {
-                echo "Bạn chưa đăng nhập lần nào";
-            }
+        <?php
+        if ($last_login != "") {
+            echo "Đăng nhập lần cuối lúc: " . $last_login;
+        } else {
+            echo "Bạn chưa đăng nhập lần nào";
+        }
         ?>
     </span>
+    <div style="text-align: right;padding-right:15px">
+        <span style="font-size: small">
+            Số lượng truy cập: <?= $view_size_count ?>
+        </span>
+    </div>
 </div>

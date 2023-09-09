@@ -2,6 +2,21 @@
     $COUNT = 1000;
 ?>
 
+<style>
+    /* css table */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid black;
+        text-align: center;
+    }
+    tr:hover {background-color:#f5f5f5;}
+</style>
+
 <table>
     <thead>
         <tr>

@@ -4,6 +4,8 @@
     // check logout
     if (isset($_GET["logout"])) {
         unset($_SESSION["username"]);
+        // session flash
+        $_SESSION["logout"] = "Đăng xuất thành công";
         header("Location: ./index.php?page=Bài%208");
     }
     // get data from form if method is POST
@@ -13,6 +15,10 @@
         // check username and password
         if ($username == "cong" && $password == "123") {
             $_SESSION["username"] = $username;
+            // Lấy time của server
+            date_default_timezone_set("Asia/Ho_Chi_Minh");
+            // save cookie last_login current time 10 years
+            setcookie("last_login", date("d/m/Y H:i:s"), time() + 10 * 365 * 24 * 60 * 60);
             // redirect to page
             header("Location: ./index.php?page=Bài%208");
         } else {
@@ -67,6 +73,13 @@
     <?php if(!$IS_LOGIN) { ?>
         <form method="POST">
             <p class="text-error"><?= $ERROR ?></p>
+            <!-- text đăng xuất thành công -->
+            <p class="text-success">
+                <?php if (isset($_SESSION["logout"])) {
+                    echo $_SESSION["logout"];
+                    unset($_SESSION["logout"]);
+                } ?>
+            </p>
             <label for="username">
                 UserName
             </label>

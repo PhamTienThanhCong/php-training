@@ -11,4 +11,6 @@
         "Bài 7" => "baitap07.php",
         "Bài 8" => "baitap08.php",
         "Bài 10" => "baitap10/index.php",
+        "Bài 14" => "baitap14.php",
+        "Bài 15" => "baitap15.php",
     ];    
