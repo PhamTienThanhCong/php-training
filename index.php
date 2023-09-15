@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once('./configs/variable.php');
+include_once('./configs/database.php');
 // get page from url 
 $page = isset($_GET['page']) ? $_GET['page'] : 'Bài 1';
 // check login
@@ -40,6 +41,7 @@ else {
 <body>
     <!-- include header -->
     <div class="container">
+        
         <?php include_once('./components/header.php'); ?>
         <?php include_once('./components/main.php'); ?>
         <?php include_once('./components/footer.php'); ?>
