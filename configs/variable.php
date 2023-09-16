@@ -17,4 +17,5 @@
         "Bài 18" => "baitap18.php",
         "Bài 19" => "baitap19.php",
         "Bài 20" => "baitap20.php",
+        "Bài 21" => "baitap21.php",
     ];    

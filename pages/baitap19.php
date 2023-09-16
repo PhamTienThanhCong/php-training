@@ -47,5 +47,15 @@
         </p>
         <br>
         <a href="./index.php?page=Bài%2020&id=<?= $id ?>">Sửa bài đăng này</a>
+        <a style="margin-left: 10px;" href="#" onclick="btnDelete()">Xóa</a>
     <?php } ?>
 </div>
+
+<script>
+    const btnDelete = () => {
+        if(window.confirm("Bạn có chắc muốn xóa bài đăng này?" )){
+            // redirect index.php
+            window.location.replace("./index.php?page=Bài%2021&id=<?= $id ?>");
+        }
+    } 
+</script>
