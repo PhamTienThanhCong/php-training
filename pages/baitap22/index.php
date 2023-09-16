@@ -4,10 +4,10 @@
     // search
     $search = "";
     if (isset($_GET['search'])) {
-        $search = htmlspecialchars($_GET['search']);
-        $sql = "SELECT * FROM news WHERE title LIKE '%$search%' OR content LIKE '%$search%' OR author LIKE '%$search%' ORDER BY id DESC LIMIT 0, 10";
-    } else
-        $sql = "SELECT * FROM news ORDER BY id DESC LIMIT 0, 10";
+        $search = $_GET['search'];
+    }
+    // search user
+    $sql = "SELECT * FROM users WHERE username LIKE '%$search%' limit 10";
     // get result
     $result = mysqli_query($conn, $sql);
     // check result
@@ -20,8 +20,7 @@
     } 
 ?>
 
-<h3 style="text-align: center;">Danh sách bài đăng</h3>
-<a href="./index.php?page=Bài%2017">Thêm mới</a>
+<h3 style="text-align: center;">Danh sách người dùng</h3>
 <br>
 <form action="./index.php?page=Bài%2018" method="get">
     <input type="hidden" name="page" value="<?= $page ?>">
@@ -35,13 +34,10 @@
             Stt
         </td>
         <td>
-            Tiêu đề
+            username
         </td>
         <td>
-            Nội Dung
-        </td>
-        <td>
-            Tác giả
+            Thông tin
         </td>
     </thead>
     <tbody>
@@ -51,18 +47,15 @@
                     <?= $index++; ?>
                 </td>
                 <td>
-                    <a href="./index.php?page=Bài%2019&id=<?= $value['id']; ?>"> <?= $value['title']; ?> </a>
+                    <a href="./index.php?page=Bài%2019&id=<?= $value['id']; ?>"> <?= $value['username']; ?> </a>
                 </td>
                 <td>
-                    <?= $value['content']; ?>
-                </td>
-                <td>
-                    <?= $value['author']; ?>
+                    <?= $value['info']; ?>
                 </td>
             </tr>
         <?php } 
             if (count($data) == 0) {
-                echo "<tr><td colspan='4'>Không có bài viết nào</td></tr>";
+                echo "<tr><td colspan='3'>Không có người dùng nào</td></tr>";
             }
         ?>
     </tbody>

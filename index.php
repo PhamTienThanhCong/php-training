@@ -5,9 +5,6 @@ include_once('./configs/database.php');
 // get page from url 
 $page = isset($_GET['page']) ? $_GET['page'] : 'Bài 1';
 // check login
-if ($page != "Bài 8" && !isset($_SESSION["username"])) {
-    header("Location: ./index.php?page=Bài%208");
-}
 
 if (isset($_SESSION["username"])) {
     $NAME_AUTHOR = $_SESSION["username"];

@@ -18,4 +18,7 @@
         "Bài 19" => "baitap19.php",
         "Bài 20" => "baitap20.php",
         "Bài 21" => "baitap21.php",
+        "Bài 22/Đăng kí" => "baitap22/dangki.php",
+        "Bài 22/Đăng nhập" => "baitap22/dangnhap.php",
+        "Bài 22/Danh sách" => "baitap22/index.php",
     ];    
